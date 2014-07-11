@@ -15,7 +15,7 @@
   "inventoryIcon" : "launchpadicon.png",
   "orientations" : [
     {
-      "dualImage" : "launchpad.png:default.<frame>",
+      "image" : "launchpad.png:default",
 
       "imagePosition" : [-16, 0],
       "frames" : 4,
@@ -25,5 +25,13 @@
       "anchors" : [ "bottom" ],
       "collision" : "solid"
     }
-  ]
+  ],
+  
+  "scripts" : [ "/objects/launchpad/launchpad.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/launchpad/launchpad.animation",
+  "animationParts" : {
+    "launchpad" : "launchpad.png"
+  }
 }

@@ -1,0 +1,45 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "beaconState" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 1
+			
+          },
+          "active" : {
+            "frames" : 3,
+            "cycle" : 2,
+           "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "launchpad" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "beaconState" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:default.default"
+              }
+            },
+
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:default.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

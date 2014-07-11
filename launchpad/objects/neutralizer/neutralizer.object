@@ -1,28 +1,21 @@
 {
-  "objectName" : "teleporter",
+  "objectName" : "neutraliser",
   "rarity" : "Common",
-  "interactAction" : "OpenTeleportDialog",
   "description" : "Trusty teleporter, what would I do without you?",
-  "shortdescription" : "Teleporter",
+  "shortdescription" : "Inertial Neutraliser",
   "race" : "generic",
 
-  "apexDescription" : "Teleporting feels like riding a rollercoaster at the speed of light.",
-  "avianDescription" : "Teleporting feels like flying.",
-  "floranDescription" : "Floran feel confusssed during teleport.",
-  "glitchDescription" : "Educate. I set myself to sleep during the teleport process.",
-  "humanDescription" : "Teleporting is a huge rush.",
-  "hylotlDescription" : "Teleporting feels like diving into the ocean from a mountain top.",
+  "apexDescription" : "...",
+  "avianDescription" : "...",
+  "floranDescription" : "...",
+  "glitchDescription" : "...",
+  "humanDescription" : "...",
+  "hylotlDescription" : "...",
 
-  "category" : "light",
-  "lightColor" : [106, 125, 142],
-  "flickerDistance" : 0.2,
-  "flickerStrength" : 0.05,
-  "flickerTiming" : 4,
-
-  "inventoryIcon" : "teleportericon.png",
+  "inventoryIcon" : "neutralizericon.png",
   "orientations" : [
     {
-      "dualImage" : "teleporter.png:<color>",
+      "dualImage" : "neutralizer.png:<color>",
 
       "imagePosition" : [-16, 0],
       "frames" : 1,
@@ -32,5 +25,13 @@
       "anchors" : [ "bottom" ],
       "collision" : "solid"
     }
-  ]
+  ],
+  
+  "scripts" : [ "/objects/neutralizer/neutralizer.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/neutralizer/neutralizer.animation",
+  "animationParts" : {
+    "neutralizer" : "neutralizer.png"
+  }
 }
