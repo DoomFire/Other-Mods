@@ -1,0 +1,7 @@
+{
+  "author": "DoomFire",
+  "name" : "shipengine",
+  "version" : "Beta v. Enraged Koala",
+  "path" : ".",
+  "dependencies" : [ ]
+}
