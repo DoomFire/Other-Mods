@@ -7,6 +7,22 @@ function main()
 
 	-- save closest player
 	self.closestPlayer = world.playerQuery( entity.position(), 100)
+	local p = entity.toAbsolutePosition({ -1.3, 1 })
+
+			world.logInfo("****************************************************")
+			world.logInfo("test")
+			
+	if #self.closestPlayer>0 then
+	
+		self.PlayeronGround= world.entityType(self.closestPlayer[1]) 
+		
+			world.logInfo("playeronGround= ".. tostring(self.PlayeronGround))
+			if not self.PlayeronGround then
+			entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { 50,50})	
+		end
+	end
+		world.logInfo("****************************************************")
+	
 	
 	if self.jump then
 		self.jump=false
@@ -14,7 +30,7 @@ function main()
 		self.hop=true
 		
 		-- point that has to be at the ?bottom left? of the object... used to set force region
-		local p = entity.toAbsolutePosition({ -1.3, 1 })
+	--	local p = entity.toAbsolutePosition({ -1.3, 1 })
 	
 	
 		-- Puts some stuff in the starbound log about positions (mostly to find problems) 
