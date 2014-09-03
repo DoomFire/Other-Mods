@@ -1,8 +1,8 @@
 {
-  "objectName" : "neutraliser",
+  "objectName" : "neutralizer",
   "rarity" : "Common",
-  "description" : "Trusty teleporter, what would I do without you?",
-  "shortdescription" : "Inertial Neutraliser",
+  "description" : "...",
+  "shortdescription" : "neutralizer Pad",
   "race" : "generic",
 
   "apexDescription" : "...",
@@ -15,10 +15,10 @@
   "inventoryIcon" : "neutralizericon.png",
   "orientations" : [
     {
-      "dualImage" : "neutralizer.png:<color>",
+      "image" : "neutralizer.png:default",
 
       "imagePosition" : [-16, 0],
-      "frames" : 1,
+      "frames" : 4,
       "animationCycle" : 0.5,
 
       "spaceScan" : 0.1,
@@ -28,10 +28,5 @@
   ],
   
   "scripts" : [ "/objects/neutralizer/neutralizer.lua" ],
-  "scriptDelta" : 5,
-
-  "animation" : "/objects/neutralizer/neutralizer.animation",
-  "animationParts" : {
-    "neutralizer" : "neutralizer.png"
-  }
+  "scriptDelta" : 5
 }

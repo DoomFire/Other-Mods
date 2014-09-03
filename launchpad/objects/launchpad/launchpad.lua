@@ -1,33 +1,45 @@
 function init(args)
-  entity.setInteractive(true)
-  entity.setAllOutboundNodes(false)
-  entity.setAnimationState("switchState", "off")
-  self.countdown = 0
+	entity.setInteractive(true)
+	self.jump=false
+end
+function main()
+	self.testVar = world.playerQuery( entity.position(), 100)
+	
+	if self.jump then
+	self.jump=false
+	local p = entity.toAbsolutePosition({ -1.3, 1 })
+	world.logInfo("x1= "..tostring(p[1]))
+	world.logInfo("y1= "..tostring(p[2]))
+	world.logInfo("x1= "..tostring(p[1])+40)
+	world.logInfo("y1= "..tostring(p[2])+80)
+
+	--try out 40000,40000 :P
+	local A = {0,4000} -- first = horizontal movement   second= vertical
+	
+    entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { 0,100})	
+    entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { A[1],A[2]})
+	end
+	
 end
 
-function trigger()
-  entity.setAllOutboundNodes(true)
-  entity.setAnimationState("switchState", "on")
-  self.countdown = entity.configParameter("detectTickDuration")
+
+
+function onInboundNodeChange(args)
+  onInteraction(args)
 end
 
 function onInteraction(args)
-  trigger()
-end
+	
+self.jump=true
+world.logInfo(tostring(self.testVar))
+if #self.testVar>0 then
+self.playerPos=world.entityPosition(self.testVar[1])
+world.logInfo(tostring(self.testVar[1]))
+world.logInfo(tostring(self.playerPos[1]))
+world.logInfo(tostring(self.playerPos[2]))
 
-function main() 
-  if self.countdown > 0 then
-    self.countdown = self.countdown - 1
-  else
-    if self.countdown == 0 then
-      local radius = entity.configParameter("detectRadius")
-      local entityIds = world.entityQuery(entity.position(), radius, { creature = true })
-      if #entityIds > 0 then
-        trigger()
-      else
-        entity.setAllOutboundNodes(false)
-        entity.setAnimationState("switchState", "off")
-      end
-    end
-  end
+end
+world.logInfo("--------------------------------------------------")
+
+
 end

@@ -23,15 +23,10 @@
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
-      "collision" : "solid"
+      "collision" : "platform"
     }
   ],
   
   "scripts" : [ "/objects/launchpad/launchpad.lua" ],
-  "scriptDelta" : 5,
-
-  "animation" : "/objects/launchpad/launchpad.animation",
-  "animationParts" : {
-    "launchpad" : "launchpad.png"
-  }
+  "scriptDelta" : 5
 }
