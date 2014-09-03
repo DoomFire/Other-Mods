@@ -13,7 +13,11 @@ function main()
 	world.logInfo("x1= "..tostring(p[1])+40)
 	world.logInfo("y1= "..tostring(p[2])+80)
 
-    entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { 0, 4000 })
+	--try out 40000,40000 :P
+	local A= {40000,0} -- first = horizontal movement   second= vertical
+	
+    entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { 0,100})	
+    entity.setForceRegion({ p[1], p[2], p[1] + 40, p[2]+80 }, { A[1],A[2]})
 	end
 	
 end
